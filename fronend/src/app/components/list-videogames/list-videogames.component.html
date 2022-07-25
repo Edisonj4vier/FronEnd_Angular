@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="car-body text-center">
+                    <span class="titulo">Listado de Videojuegos</span>
+                    <button class="btn btn-success float-end" routerLink="/crear-videogame">Nuevo</button>
+                    <table  class="table table-striped mt-3"> 
+                        <thead>
+                          <tr>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Fecha de estreno</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let videjuego of listVideogames">
+                            <th>{{videjuego.title}}</th>
+                            <td>{{videjuego.description}}</td>
+                            <td>{{videjuego.category}}</td>
+                            <td>{{videjuego.effectiveDate}}</td>
+                            <td>{{videjuego.price | currency: 'USD'}}</td>
+                            <td><i [routerLink]="['/editar-videogame',videjuego._id]" class="fa-solid fa-pen-to-square text-primary"></i>
+                                <i (click)="deleteVideogame(videjuego._id)" class="fa-solid fa-trash text-danger"></i></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <h5 style="text-align: center; margin-top: 10px;" *ngIf="listVideogames.length == 0">No hay videojuegos para mostrar</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
