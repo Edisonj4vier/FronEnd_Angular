@@ -7,7 +7,7 @@ import { Videogame } from '../models/model.videogame';
   providedIn: 'root'
 })
 export class VideogameService {
-  url = 'http://localhost:3001/videogames/';
+  url = 'http://localhost:3000/videogames/';
 
   constructor(private http: HttpClient) {}
 
@@ -15,20 +15,20 @@ export class VideogameService {
     return this.http.get(this.url);
   }
 
-  deleteVideogame(id: string):Observable<any>{
-    return this.http.delete(this.url + id);
+  deleteVideogame(_id: string):Observable<any>{
+    return this.http.delete(this.url + _id);
   }
 
   saveVideogame(videogame: Videogame): Observable<any>{
     return this.http.post(this.url,videogame);
   }
 
-  retrieveVideogames(id: string): Observable<any>{
-    return this.http.get(this.url + id);
+  retrieveVideogames(_id: string): Observable<any>{
+    return this.http.get(this.url + _id);
   }
 
-  editVideogame(id:string, videojuego: Videogame): Observable<any>{
-    return this.http.put(this.url + id,videojuego);
+  editVideogame(_id:string, videojuego: Videogame): Observable<any>{
+    return this.http.put(this.url + _id,videojuego);
   }
 
 }
