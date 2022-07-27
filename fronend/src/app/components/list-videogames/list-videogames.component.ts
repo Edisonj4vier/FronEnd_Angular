@@ -8,8 +8,18 @@ import { VideogameService } from 'src/app/services/videogame.service';
   templateUrl: './list-videogames.component.html',
   styleUrls: ['./list-videogames.component.css']
 })
+
 export class ListVideogamesComponent implements OnInit {
   listVideogames: Videogame[] = [];
+  page!: number;
+  pageSize = 3;
+  pageSizes = [3, 6, 9];
+  
+  handlePageSizeChange(event: any): void {
+    this.pageSize = event.target.value;
+    this.page = 1;
+    this.getVideojuegos();
+  }  
 
   constructor(private _videogameService: VideogameService,
               private toastr: ToastrService) { }
@@ -19,9 +29,10 @@ export class ListVideogamesComponent implements OnInit {
   }
 
   getVideojuegos(){
-    this._videogameService.getVideogames().subscribe(data => {
-      console.log(data);
-      this.listVideogames = data;
+    this._videogameService.getVideogames().subscribe(resp =>
+      {
+      console.log(resp);
+      this.listVideogames = resp.content;
     }, error =>{
       console.log(error);
     })

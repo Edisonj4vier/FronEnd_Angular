@@ -1,11 +1,11 @@
-export interface Videogame {
+export class Videogame {
     _id?:               number;
     title:              string;
     description:        string;
     category:           string;
     effectiveDate:      Date;
     price:              number;
-/*
+
     constructor(title: string, description: string, category: string, effectiveDate: Date, price: number ){
         this.title = title;
         this.description = description;
@@ -13,5 +13,5 @@ export interface Videogame {
         this.effectiveDate = effectiveDate;
         this.price = price;
     }
-    */
+
 }

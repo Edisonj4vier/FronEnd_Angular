@@ -6,8 +6,9 @@ import { Videogame } from '../models/model.videogame';
 @Injectable({
   providedIn: 'root'
 })
+
 export class VideogameService {
-  url = 'http://localhost:3001/videogames/';
+  url = 'http://localhost:3000/videogames/';
 
   constructor(private http: HttpClient) {}
 
@@ -27,8 +28,8 @@ export class VideogameService {
     return this.http.get(this.url + id);
   }
 
-  editVideogame(id:string, videojuego: Videogame): Observable<any>{
-    return this.http.put(this.url + id,videojuego);
+  editVideogame(id:string, videogame: Videogame): Observable<any>{
+    return this.http.put(this.url + id,videogame);
   }
 
 }

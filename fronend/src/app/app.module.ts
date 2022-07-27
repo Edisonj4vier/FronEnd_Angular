@@ -9,13 +9,12 @@ import { AppComponent } from './app.component';
 import { CreateVideogamesComponent } from './components/create-videogames/create-videogames.component';
 import { ListVideogamesComponent } from './components/list-videogames/list-videogames.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ObjToArrayPipe } from './objToArray.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
     CreateVideogamesComponent,
-    ListVideogamesComponent,
-    ObjToArrayPipe
+    ListVideogamesComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +22,8 @@ import { ObjToArrayPipe } from './objToArray.pipe';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,7 +17,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let videjuego of listVideogames">
+                          <tr *ngFor="let videjuego of listVideogames | paginate: { itemsPerPage:pageSize, currentPage: page }">
                             <th>{{videjuego.title}}</th>
                             <td>{{videjuego.description}}</td>
                             <td>{{videjuego.category}}</td>
@@ -34,3 +34,16 @@
         </div>
     </div>
 </div>
+<div class="car-body text-center mt-3">
+  Item por pagina:
+  <select (change)="handlePageSizeChange($event)">
+    <option *ngFor="let size of pageSizes" [ngValue]="size">
+      {{ size }}
+    </option>
+  </select>
+</div>
+<div class="car-body text-center mt-3">
+  <pagination-controls (pageChange)="page = $event" previousLabel="Previous" nextLabel="Next" ></pagination-controls>
+
+</div>
+
