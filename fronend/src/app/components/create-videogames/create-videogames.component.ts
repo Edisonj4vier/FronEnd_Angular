@@ -75,11 +75,11 @@ export class CreateVideogamesComponent implements OnInit {
       this.titulo = 'Editar Videojuego';
       this._videogameService.retrieveVideogames(this.id).subscribe(data => {
         this.videogameForm.setValue({
-          videojuego: data.title,
-          descripcion: data.description,
-          categoria: data.category,
-          fecha_estreno: data.effectiveDate,
-          precio: data.precio
+          videojuego: data.content.title,
+          descripcion: data.content.description,
+          categoria: data.content.category,
+          fecha_estreno: data.content.effectiveDate,
+          precio: data.content.price
         })
       })
     }

@@ -17,14 +17,14 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let videjuego of listVideogames | paginate: { itemsPerPage:pageSize, currentPage: page }">
-                            <th>{{videjuego.title}}</th>
-                            <td>{{videjuego.description}}</td>
-                            <td>{{videjuego.category}}</td>
-                            <td>{{videjuego.effectiveDate}}</td>
-                            <td>{{videjuego.price | currency: 'USD'}}</td>
-                            <td><i [routerLink]="['/editar-videogame',videjuego._id]" class="fa-solid fa-pen-to-square text-primary"></i>
-                                <i (click)="deleteVideogame(videjuego._id)" class="fa-solid fa-trash text-danger"></i></td>
+                          <tr *ngFor="let videojuego of listVideogames | paginate: { itemsPerPage:pageSize, currentPage: page }">
+                            <th>{{videojuego.title}}</th>
+                            <td>{{videojuego.description}}</td>
+                            <td>{{videojuego.category}}</td>
+                            <td>{{videojuego.effectiveDate}}</td>
+                            <td>{{videojuego.price | currency: 'USD'}}</td>
+                            <td><i [routerLink]="['/editar-videogame',videojuego._id]" class="fa-solid fa-pen-to-square text-primary"></i>
+                                <i (click)="deleteVideogame(videojuego._id)" class="fa-solid fa-trash text-danger"></i></td>
                           </tr>
                         </tbody>
                       </table>
