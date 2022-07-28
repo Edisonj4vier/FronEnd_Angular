@@ -21,10 +21,11 @@
                             <th>{{videojuego.title}}</th>
                             <td>{{videojuego.description}}</td>
                             <td>{{videojuego.category}}</td>
-                            <td>{{videojuego.effectiveDate}}</td>
+                            <td>{{videojuego.effectiveDate | date: "mediumDate"}}</td>
                             <td>{{videojuego.price | currency: 'USD'}}</td>
                             <td><i [routerLink]="['/editar-videogame',videojuego._id]" class="fa-solid fa-pen-to-square text-primary"></i>
-                                <i (click)="deleteVideogame(videojuego._id)" class="fa-solid fa-trash text-danger"></i></td>
+                                <i (click)="deleteVideogame(videojuego._id)" class="fa-solid fa-trash text-danger"></i>
+                                <i [routerLink]="['/ver-videogame',videojuego._id]" class="fa-solid fa-eye"></i></td>
                           </tr>
                         </tbody>
                       </table>

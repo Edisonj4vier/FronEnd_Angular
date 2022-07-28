@@ -1,3 +1,5 @@
+import { DatePipe } from "@angular/common";
+
 export class Videogame {
     _id?:               number;
     title:              string;

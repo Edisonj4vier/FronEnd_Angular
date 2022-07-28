@@ -9,6 +9,7 @@ const routes: Routes = [
   {path: '',component: ListVideogamesComponent},
   {path: 'crear-videogame', component: CreateVideogamesComponent},
   {path: 'editar-videogame/:id',component: CreateVideogamesComponent},
+  {path: 'ver-videogame/:id',component: CreateVideogamesComponent},
   {path: '**',redirectTo: '', pathMatch: 'full'}
 ];
 
